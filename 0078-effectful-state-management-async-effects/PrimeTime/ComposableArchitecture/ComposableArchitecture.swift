@@ -30,15 +30,6 @@ public final class Store<Value, Action>: ObservableObject {
     effects.forEach { effect in
       effect(self.send)
     }
-//    DispatchQueue.global().async {
-//      effects.forEach { effect in
-//        if let action = effect() {
-//          DispatchQueue.main.async {
-//            self.send(action)
-//          }
-//        }
-//      }
-//    }
   }
 
   public func view<LocalValue, LocalAction>(
